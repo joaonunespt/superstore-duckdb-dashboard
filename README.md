@@ -1,7 +1,7 @@
 
 # Superstore DuckDB Dashboard
 
-This version uses a real DuckDB database file instead of reading `superstore.csv` directly at request time.
+Uses a real DuckDB database file instead of reading `superstore.csv` directly at request time.
 
 ## Structure
 
@@ -12,11 +12,9 @@ This version uses a real DuckDB database file instead of reading `superstore.csv
 
 ## Why this version
 
-Your previous Node backend was blocked by the native `duckdb` package on Node 23. This version avoids that by:
-
-- keeping DuckDB as the data engine
-- moving the backend to Python + FastAPI
-- keeping the React frontend
+- DuckDB as the data engine
+- Backend in Python + FastAPI
+- React frontend
 
 ## Run the backend
 
@@ -59,8 +57,6 @@ VITE_API_BASE_URL=http://localhost:8000 npm run dev
 
 ## Important note about "frontend using DuckDB"
 
-In this version, the frontend talks to a backend that queries DuckDB.
+The frontend talks to a backend that queries DuckDB.
 
-That is the safest architecture for your Mac right now.
-
-If you want the browser itself to run DuckDB directly, the next step would be a separate version using **DuckDB-Wasm**.
+To have the browser itself to run DuckDB directly, the next step would be a separate version using **DuckDB-Wasm**.
